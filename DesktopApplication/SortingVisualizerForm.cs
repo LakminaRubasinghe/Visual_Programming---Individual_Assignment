@@ -15,6 +15,8 @@ namespace DesktopApplication
 
         private QuickSort quickSort;
 
+        private InsertionSort insertionSort;
+
         private Random rand = new Random();
 
         private int comparisons = 0;
@@ -87,10 +89,10 @@ namespace DesktopApplication
                 return;
             }
 
-            // Initialize the logic class
+
             quickSort = new QuickSort(array);
 
-            // Turn on the clock!
+
             tmrSort.Start();
         }
 
@@ -101,13 +103,21 @@ namespace DesktopApplication
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int currentStepComparisons;
+            int currentStepComparisons = 0;
+            bool isStillSorting = false;
 
-            bool isStillSorting = quickSort.SortStep(out currentStepComparisons);
+            // Check which sorting object is initialized
+            if (quickSort != null)
+            {
+                isStillSorting = quickSort.SortStep(out currentStepComparisons);
+            }
+            else if (insertionSort != null)
+            {
+                isStillSorting = insertionSort.SortStep(out currentStepComparisons);
+            }
 
             comparisons += currentStepComparisons;
             lblComparisons.Text = $"Comparisons: {comparisons}";
-
             pnlCanvas.Invalidate();
 
             if (!isStillSorting)
@@ -115,6 +125,21 @@ namespace DesktopApplication
                 tmrSort.Stop();
                 MessageBox.Show("Sorting Complete!", "Success");
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            tmrSort.Stop();
+            array = null;
+            comparisons = 0;
+            lblComparisons.Text = "Comparisons: 0";
+
+            quickSort = null;
+            insertionSort = null;
+
+            pnlCanvas.Invalidate();
+
+            cmbAlgorithms.SelectedIndex = -1;
         }
     }
 }

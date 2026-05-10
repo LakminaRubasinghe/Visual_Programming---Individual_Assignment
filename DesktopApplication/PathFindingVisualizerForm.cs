@@ -8,11 +8,24 @@ using System.Windows.Forms;
 
 namespace DesktopApplication
 {
-    public partial class PathFindingVisualizerForm : Form
+    public partial class PathfindingVisualizerForm : Form
     {
-        public PathFindingVisualizerForm()
+        public PathfindingVisualizerForm()
         {
             InitializeComponent();
+        }
+
+        private void PathfindingVisualizerForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenSettings_Click_1(object sender, EventArgs e)
+        {
+            using (SettingsForm settings = new SettingsForm())
+            {
+                settings.ShowDialog();
+            }
         }
     }
 }

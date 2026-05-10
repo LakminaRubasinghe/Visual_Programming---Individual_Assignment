@@ -14,5 +14,13 @@ namespace DesktopApplication
         {
             InitializeComponent();
         }
+
+        private void btnOpenSettings_Click(object sender, EventArgs e)
+        {
+            using (SettingsForm settings = new SettingsForm())
+            {
+                settings.ShowDialog();
+            }
+        }
     }
 }

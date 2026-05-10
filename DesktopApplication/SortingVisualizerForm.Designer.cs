@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SortingVisualizerForm";
+            btnOpenSettings = new Button();
+            SuspendLayout();
+            // 
+            // btnOpenSettings
+            // 
+            btnOpenSettings.Location = new Point(285, 165);
+            btnOpenSettings.Name = "btnOpenSettings";
+            btnOpenSettings.Size = new Size(214, 58);
+            btnOpenSettings.TabIndex = 1;
+            btnOpenSettings.Text = "Settings";
+            btnOpenSettings.UseVisualStyleBackColor = true;
+            btnOpenSettings.Click += btnOpenSettings_Click;
+            // 
+            // SortingVisualizerForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnOpenSettings);
+            Name = "SortingVisualizerForm";
+            Text = "SortingVisualizerForm";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnOpenSettings;
     }
 }

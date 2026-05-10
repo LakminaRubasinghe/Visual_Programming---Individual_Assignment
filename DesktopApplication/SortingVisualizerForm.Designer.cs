@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnOpenSettings = new Button();
             pnlCanvas = new Panel();
             pnlControls = new Panel();
-            btnGenerate = new Button();
-            btnStart = new Button();
-            btnReset = new Button();
-            cmbAlgorithms = new ComboBox();
             lblComparisons = new Label();
+            cmbAlgorithms = new ComboBox();
+            btnReset = new Button();
+            btnStart = new Button();
+            btnGenerate = new Button();
+            tmrSort = new System.Windows.Forms.Timer(components);
             pnlControls.SuspendLayout();
             SuspendLayout();
             // 
             // btnOpenSettings
             // 
-            btnOpenSettings.Location = new Point(564, 158);
+            btnOpenSettings.Location = new Point(564, 70);
             btnOpenSettings.Name = "btnOpenSettings";
             btnOpenSettings.Size = new Size(214, 58);
             btnOpenSettings.TabIndex = 1;
@@ -69,36 +71,19 @@
             pnlControls.Dock = DockStyle.Top;
             pnlControls.Location = new Point(0, 0);
             pnlControls.Name = "pnlControls";
-            pnlControls.Size = new Size(800, 231);
+            pnlControls.Size = new Size(800, 148);
             pnlControls.TabIndex = 3;
+            pnlControls.Paint += pnlControls_Paint;
             // 
-            // btnGenerate
+            // lblComparisons
             // 
-            btnGenerate.Location = new Point(21, 12);
-            btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(146, 64);
-            btnGenerate.TabIndex = 0;
-            btnGenerate.Text = "Generate New Array";
-            btnGenerate.UseVisualStyleBackColor = true;
-            btnGenerate.Click += button1_Click;
-            // 
-            // btnStart
-            // 
-            btnStart.Location = new Point(182, 12);
-            btnStart.Name = "btnStart";
-            btnStart.Size = new Size(139, 64);
-            btnStart.TabIndex = 1;
-            btnStart.Text = "Start Sort";
-            btnStart.UseVisualStyleBackColor = true;
-            // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(337, 12);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(134, 64);
-            btnReset.TabIndex = 2;
-            btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
+            lblComparisons.AutoSize = true;
+            lblComparisons.Location = new Point(664, 23);
+            lblComparisons.Name = "lblComparisons";
+            lblComparisons.Size = new Size(114, 20);
+            lblComparisons.TabIndex = 4;
+            lblComparisons.Text = "Comparisons : 0";
+            lblComparisons.Click += label1_Click;
             // 
             // cmbAlgorithms
             // 
@@ -110,15 +95,39 @@
             cmbAlgorithms.TabIndex = 3;
             cmbAlgorithms.Text = "cmbAlgorithms";
             // 
-            // lblComparisons
+            // btnReset
             // 
-            lblComparisons.AutoSize = true;
-            lblComparisons.Location = new Point(664, 23);
-            lblComparisons.Name = "lblComparisons";
-            lblComparisons.Size = new Size(114, 20);
-            lblComparisons.TabIndex = 4;
-            lblComparisons.Text = "Comparisons : 0";
-            lblComparisons.Click += label1_Click;
+            btnReset.Location = new Point(337, 12);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(134, 64);
+            btnReset.TabIndex = 2;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnStart
+            // 
+            btnStart.Location = new Point(182, 12);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(139, 64);
+            btnStart.TabIndex = 1;
+            btnStart.Text = "Start Sort";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.Location = new Point(21, 12);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(146, 64);
+            btnGenerate.TabIndex = 0;
+            btnGenerate.Text = "Generate New Array";
+            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.Click += button1_Click;
+            // 
+            // tmrSort
+            // 
+            tmrSort.Interval = 50;
+            tmrSort.Tick += timer1_Tick;
             // 
             // SortingVisualizerForm
             // 
@@ -144,5 +153,6 @@
         private Button btnGenerate;
         private Label lblComparisons;
         private ComboBox cmbAlgorithms;
+        private System.Windows.Forms.Timer tmrSort;
     }
 }

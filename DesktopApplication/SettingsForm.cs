@@ -14,5 +14,10 @@ namespace DesktopApplication
         {
             InitializeComponent();
         }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

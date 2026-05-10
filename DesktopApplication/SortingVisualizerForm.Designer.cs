@@ -88,12 +88,12 @@
             // cmbAlgorithms
             // 
             cmbAlgorithms.FormattingEnabled = true;
-            cmbAlgorithms.Items.AddRange(new object[] { "Quick Sort", "Merge Sort" });
+            cmbAlgorithms.Items.AddRange(new object[] { "Quick Sort", "Insertion Sort" });
             cmbAlgorithms.Location = new Point(487, 15);
             cmbAlgorithms.Name = "cmbAlgorithms";
             cmbAlgorithms.Size = new Size(151, 28);
             cmbAlgorithms.TabIndex = 3;
-            cmbAlgorithms.Text = "cmbAlgorithms";
+            cmbAlgorithms.Text = "SortingAlgorithms";
             // 
             // btnReset
             // 
@@ -103,6 +103,7 @@
             btnReset.TabIndex = 2;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // btnStart
             // 

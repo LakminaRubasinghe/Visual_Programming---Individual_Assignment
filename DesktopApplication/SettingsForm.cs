@@ -5,14 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace DesktopApplication
 {
     public partial class SettingsForm : Form
     {
 
-        public int ArraySize { get; private set; }
-        public int TimerInterval { get; private set; }
+        public int ArraySize;
+        public int TimerInterval;
 
         public SettingsForm()
         {

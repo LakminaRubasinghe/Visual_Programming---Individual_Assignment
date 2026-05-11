@@ -16,13 +16,21 @@ namespace DesktopApplication
         private int cols = 40;
         private int cellSize = 25;
 
+        private int animationSpeed = 50;
+
         private Node startNode;
         private Node endNode;
+
+        private bool isRunning = false;
 
         public PathfindingVisualizerForm()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+
+            numRows.Value = rows;
+            numCols.Value = cols;
+
             InitializeGrid();
         }
 
@@ -47,7 +55,10 @@ namespace DesktopApplication
         {
             using (SettingsForm settings = new SettingsForm())
             {
-                settings.ShowDialog();
+                if (settings.ShowDialog() == DialogResult.OK)
+                {
+                    this.animationSpeed = settings.TimerInterval;
+                }
             }
         }
 
@@ -66,7 +77,7 @@ namespace DesktopApplication
                     if (grid[r, c].IsWall) brush = Brushes.Black;
                     else if (grid[r, c].IsStart) brush = Brushes.Green;
                     else if (grid[r, c].IsEnd) brush = Brushes.Red;
-                    else if (grid[r, c].IsPath) brush = Brushes.Yellow;      
+                    else if (grid[r, c].IsPath) brush = Brushes.Yellow;
                     else if (grid[r, c].IsVisited) brush = Brushes.LightBlue;
 
                     g.FillRectangle(brush, c * cellSize, r * cellSize, cellSize, cellSize);
@@ -117,23 +128,23 @@ namespace DesktopApplication
 
         private async void StartDijkstra()
         {
-            if (startNode == null || endNode == null)
-            {
-                MessageBox.Show("Please select a Start and End node first!");
-                return;
-            }
+            if (startNode == null || endNode == null) return;
 
+            isRunning = true;
             Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(startNode);
             startNode.IsVisited = true;
 
             while (queue.Count > 0)
             {
+                if (!isRunning) return;
+
                 Node current = queue.Dequeue();
 
                 if (current == endNode)
                 {
                     DrawPath();
+                    isRunning = false;
                     return;
                 }
 
@@ -148,9 +159,10 @@ namespace DesktopApplication
                 }
 
                 pnlGrid.Invalidate();
-                await Task.Delay(10);
+                await Task.Delay(animationSpeed);
             }
-            MessageBox.Show("No path found!");
+
+            isRunning = false;
         }
 
         private List<Node> GetNeighbors(Node node)
@@ -187,6 +199,82 @@ namespace DesktopApplication
         private void btnStartSearch_Click(object sender, EventArgs e)
         {
             StartDijkstra();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearFullGrid();
+        }
+
+        private void ClearFullGrid()
+        {
+            isRunning = false;
+
+            if (grid == null) return;
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    grid[r, c].IsWall = false;
+                    grid[r, c].IsStart = false;
+                    grid[r, c].IsEnd = false;
+                    grid[r, c].IsVisited = false;
+                    grid[r, c].IsPath = false;
+                    grid[r, c].Parent = null;
+                }
+            }
+
+            startNode = null;
+            endNode = null;
+
+            pnlGrid.Invalidate();
+        }
+
+        private void ResetSearchOnly()
+        {
+            if (grid == null) return;
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    grid[r, c].IsVisited = false;
+                    grid[r, c].IsPath = false;
+                    grid[r, c].Parent = null;
+                }
+            }
+
+            pnlGrid.Invalidate();
+        }
+
+        private void btnResetSearch_Click(object sender, EventArgs e)
+        {
+            ResetSearchOnly();
+        }
+
+
+        private void ApplyNewGridSize()
+        {
+            rows = (int)numRows.Value;
+            cols = (int)numCols.Value;
+
+            startNode = null;
+            endNode = null;
+
+            InitializeGrid();
+
+            pnlGrid.Invalidate();
+        }
+
+        private void numRows_ValueChanged(object sender, EventArgs e)
+        {
+            ApplyNewGridSize();
+        }
+
+        private void numCols_ValueChanged(object sender, EventArgs e)
+        {
+            ApplyNewGridSize();
         }
     }
 }

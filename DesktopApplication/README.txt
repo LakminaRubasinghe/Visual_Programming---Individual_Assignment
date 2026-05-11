@@ -28,4 +28,4 @@ How to Run
 
 Clone the Repository :
 
-   git clone (git@github.com:LakminaRubasinghe/Visual_Programming---Individual_Assignment.git)
+   git clone (https://github.com/LakminaRubasinghe/Visual_Programming---Individual_Assignment.git)

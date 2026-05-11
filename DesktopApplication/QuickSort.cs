@@ -11,11 +11,9 @@ namespace DesktopApplication
         public QuickSort(int[] array)
         {
             this.array = array;
-            // Initialize the stack with the full array range
             stack.Push((0, array.Length - 1));
         }
 
-        // This method performs ONE partition step and returns true if still sorting
         public bool SortStep(out int comparisons)
         {
             comparisons = 0;
@@ -26,7 +24,6 @@ namespace DesktopApplication
             if (low < high)
             {
                 int p = Partition(low, high, ref comparisons);
-                // Push right side then left side to stack
                 stack.Push((p + 1, high));
                 stack.Push((low, p));
             }
@@ -47,7 +44,6 @@ namespace DesktopApplication
 
                 if (i >= j) return j;
 
-                // Swap elements
                 int temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;

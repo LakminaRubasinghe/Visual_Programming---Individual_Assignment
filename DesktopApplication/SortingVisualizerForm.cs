@@ -113,7 +113,6 @@ namespace DesktopApplication
             int currentStepComparisons = 0;
             bool isStillSorting = false;
 
-            // Check which sorting object is initialized
             if (quickSort != null)
             {
                 isStillSorting = quickSort.SortStep(out currentStepComparisons);

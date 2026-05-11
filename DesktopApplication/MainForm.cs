@@ -10,7 +10,7 @@ namespace DesktopApplication
         private void btnOpenSorting_Click(object sender, EventArgs e)
         {
             SortingVisualizerForm sortingForm = new SortingVisualizerForm();
-            sortingForm.Show(); // Opens the sorting window
+            sortingForm.Show();
         }
 
         private void btnOpenPathfinding_Click(object sender, EventArgs e)
@@ -19,5 +19,9 @@ namespace DesktopApplication
             pathfindingForm.Show();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

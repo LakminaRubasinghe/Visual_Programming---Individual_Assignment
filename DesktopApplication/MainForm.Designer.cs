@@ -38,7 +38,7 @@
             // 
             btnOpenSorting.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             btnOpenSorting.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOpenSorting.Location = new Point(213, 229);
+            btnOpenSorting.Location = new Point(213, 205);
             btnOpenSorting.Name = "btnOpenSorting";
             btnOpenSorting.Size = new Size(351, 58);
             btnOpenSorting.TabIndex = 0;
@@ -50,7 +50,7 @@
             // btnOpenPathfinding
             // 
             btnOpenPathfinding.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
-            btnOpenPathfinding.Location = new Point(213, 334);
+            btnOpenPathfinding.Location = new Point(213, 307);
             btnOpenPathfinding.Name = "btnOpenPathfinding";
             btnOpenPathfinding.Size = new Size(351, 58);
             btnOpenPathfinding.TabIndex = 1;
@@ -65,9 +65,10 @@
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(96, 35);
             label1.Name = "label1";
-            label1.Size = new Size(610, 46);
+            label1.Size = new Size(609, 46);
             label1.TabIndex = 2;
-            label1.Text = "Welcome to our Desktop Application";
+            label1.Text = "Welcome To My Desktop Application";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -75,9 +76,9 @@
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(12, 144);
             label2.Name = "label2";
-            label2.Size = new Size(347, 31);
+            label2.Size = new Size(355, 31);
             label2.TabIndex = 3;
-            label2.Text = "Select one of the two methods,";
+            label2.Text = "Select one of the two functions,";
             // 
             // MainForm
             // 

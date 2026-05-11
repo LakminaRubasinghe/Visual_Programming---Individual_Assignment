@@ -44,9 +44,9 @@
             // btnOpenSettings
             // 
             btnOpenSettings.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            btnOpenSettings.Location = new Point(606, 87);
+            btnOpenSettings.Location = new Point(650, 78);
             btnOpenSettings.Name = "btnOpenSettings";
-            btnOpenSettings.Size = new Size(172, 41);
+            btnOpenSettings.Size = new Size(128, 50);
             btnOpenSettings.TabIndex = 1;
             btnOpenSettings.Text = "Settings";
             btnOpenSettings.UseVisualStyleBackColor = true;
@@ -79,10 +79,10 @@
             // lblComparisons
             // 
             lblComparisons.AutoSize = true;
-            lblComparisons.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            lblComparisons.Location = new Point(628, 33);
+            lblComparisons.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblComparisons.Location = new Point(432, 87);
             lblComparisons.Name = "lblComparisons";
-            lblComparisons.Size = new Size(138, 23);
+            lblComparisons.Size = new Size(162, 28);
             lblComparisons.TabIndex = 4;
             lblComparisons.Text = "Comparisons : 0";
             lblComparisons.Click += label1_Click;
@@ -94,9 +94,9 @@
             cmbAlgorithms.Items.AddRange(new object[] { "Quick Sort", "Insertion Sort" });
             cmbAlgorithms.Location = new Point(432, 30);
             cmbAlgorithms.Name = "cmbAlgorithms";
-            cmbAlgorithms.Size = new Size(176, 31);
+            cmbAlgorithms.Size = new Size(162, 31);
             cmbAlgorithms.TabIndex = 3;
-            cmbAlgorithms.Text = "SortingAlgorithms";
+            cmbAlgorithms.Text = "Algorithm Type";
             // 
             // btnReset
             // 

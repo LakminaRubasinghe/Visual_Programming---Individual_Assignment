@@ -45,9 +45,10 @@
             // 
             // btnOpenSettings
             // 
-            btnOpenSettings.Location = new Point(664, 100);
+            btnOpenSettings.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnOpenSettings.Location = new Point(664, 93);
             btnOpenSettings.Name = "btnOpenSettings";
-            btnOpenSettings.Size = new Size(113, 33);
+            btnOpenSettings.Size = new Size(113, 38);
             btnOpenSettings.TabIndex = 2;
             btnOpenSettings.Text = "Settings";
             btnOpenSettings.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@
             // 
             // btnStartSearch
             // 
-            btnStartSearch.Location = new Point(621, 21);
+            btnStartSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStartSearch.Location = new Point(34, 89);
             btnStartSearch.Name = "btnStartSearch";
-            btnStartSearch.Size = new Size(140, 33);
+            btnStartSearch.Size = new Size(140, 42);
             btnStartSearch.TabIndex = 3;
             btnStartSearch.Text = "Start Search";
             btnStartSearch.UseVisualStyleBackColor = true;
@@ -92,48 +94,53 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(316, 27);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Location = new Point(395, 27);
             label2.Name = "label2";
-            label2.Size = new Size(66, 20);
+            label2.Size = new Size(93, 28);
             label2.TabIndex = 9;
             label2.Text = "Columns";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 21);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(58, 27);
             label1.Name = "label1";
-            label1.Size = new Size(44, 20);
+            label1.Size = new Size(62, 28);
             label1.TabIndex = 8;
             label1.Text = "Rows";
             // 
             // numCols
             // 
-            numCols.Location = new Point(399, 25);
+            numCols.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numCols.Location = new Point(508, 25);
             numCols.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numCols.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             numCols.Name = "numCols";
-            numCols.Size = new Size(150, 27);
+            numCols.Size = new Size(150, 34);
             numCols.TabIndex = 7;
             numCols.Value = new decimal(new int[] { 10, 0, 0, 0 });
             numCols.ValueChanged += numCols_ValueChanged;
             // 
             // numRows
             // 
-            numRows.Location = new Point(98, 21);
+            numRows.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            numRows.Location = new Point(143, 25);
             numRows.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numRows.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             numRows.Name = "numRows";
-            numRows.Size = new Size(150, 27);
+            numRows.Size = new Size(150, 34);
             numRows.TabIndex = 6;
             numRows.Value = new decimal(new int[] { 10, 0, 0, 0 });
             numRows.ValueChanged += numRows_ValueChanged;
             // 
             // btnResetSearch
             // 
-            btnResetSearch.Location = new Point(564, 102);
+            btnResetSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnResetSearch.Location = new Point(299, 94);
             btnResetSearch.Name = "btnResetSearch";
-            btnResetSearch.Size = new Size(94, 29);
+            btnResetSearch.Size = new Size(94, 36);
             btnResetSearch.TabIndex = 5;
             btnResetSearch.Text = "Reset Path";
             btnResetSearch.UseVisualStyleBackColor = true;
@@ -141,10 +148,11 @@
             // 
             // btnClearGrid
             // 
-            btnClearGrid.BackColor = Color.SandyBrown;
-            btnClearGrid.Location = new Point(455, 102);
+            btnClearGrid.BackColor = SystemColors.ButtonHighlight;
+            btnClearGrid.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnClearGrid.Location = new Point(189, 92);
             btnClearGrid.Name = "btnClearGrid";
-            btnClearGrid.Size = new Size(94, 29);
+            btnClearGrid.Size = new Size(94, 38);
             btnClearGrid.TabIndex = 4;
             btnClearGrid.Text = "Clear All";
             btnClearGrid.UseVisualStyleBackColor = false;

@@ -11,6 +11,9 @@ namespace DesktopApplication
     public partial class SortingVisualizerForm : Form
     {
 
+        private int currentArraySize = 50;
+        private int currentTimerInterval = 50;
+
         private int[] array;
 
         private QuickSort quickSort;
@@ -30,47 +33,51 @@ namespace DesktopApplication
         {
             using (SettingsForm settings = new SettingsForm())
             {
-                settings.ShowDialog();
+                if (settings.ShowDialog() == DialogResult.OK)
+                {
+                    currentArraySize = settings.ArraySize;
+                    currentTimerInterval = settings.TimerInterval;
+
+                    tmrSort.Interval = currentTimerInterval;
+
+                    MessageBox.Show($"Settings Updated! Size: {currentArraySize}, Speed: {currentTimerInterval}ms");
+                }
             }
         }
 
 
         private void pnlCanvas_Paint(object sender, PaintEventArgs e)
         {
-            if (array == null || array.Length == 0) return;
+            if (array == null) return;
 
             Graphics g = e.Graphics;
 
+            float canvasWidth = pnlCanvas.Width;
+            float barWidth = canvasWidth / array.Length;
 
-            float barWidth = (float)pnlCanvas.Width / array.Length;
+            int maxCanvasHeight = pnlCanvas.Height - 20;
 
             for (int i = 0; i < array.Length; i++)
             {
-                float barHeight = (float)array[i];
-
-
                 float x = i * barWidth;
-                float y = pnlCanvas.Height - barHeight;
 
-                g.FillRectangle(Brushes.SkyBlue, x, y, barWidth - 1, barHeight);
+                g.FillRectangle(Brushes.LightSkyBlue, x, pnlCanvas.Height - array[i], barWidth, array[i]);
 
-                g.DrawRectangle(Pens.Black, x, y, barWidth - 1, barHeight);
+                g.DrawRectangle(Pens.Black, x, pnlCanvas.Height - array[i], barWidth, array[i]);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int arraySize = 50;
+            int arraySize = currentArraySize;
             array = new int[arraySize];
 
             for (int i = 0; i < arraySize; i++)
             {
-                array[i] = rand.Next(10, pnlCanvas.Height - 20);
+                array[i] = rand.Next(20, pnlCanvas.Height - 50);
             }
-
             comparisons = 0;
             lblComparisons.Text = "Comparisons: 0";
-
             pnlCanvas.Invalidate();
         }
 

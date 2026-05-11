@@ -43,9 +43,10 @@
             // 
             // btnOpenSettings
             // 
-            btnOpenSettings.Location = new Point(564, 70);
+            btnOpenSettings.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnOpenSettings.Location = new Point(606, 87);
             btnOpenSettings.Name = "btnOpenSettings";
-            btnOpenSettings.Size = new Size(214, 58);
+            btnOpenSettings.Size = new Size(172, 41);
             btnOpenSettings.TabIndex = 1;
             btnOpenSettings.Text = "Settings";
             btnOpenSettings.UseVisualStyleBackColor = true;
@@ -78,28 +79,31 @@
             // lblComparisons
             // 
             lblComparisons.AutoSize = true;
-            lblComparisons.Location = new Point(664, 23);
+            lblComparisons.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            lblComparisons.Location = new Point(628, 33);
             lblComparisons.Name = "lblComparisons";
-            lblComparisons.Size = new Size(114, 20);
+            lblComparisons.Size = new Size(138, 23);
             lblComparisons.TabIndex = 4;
             lblComparisons.Text = "Comparisons : 0";
             lblComparisons.Click += label1_Click;
             // 
             // cmbAlgorithms
             // 
+            cmbAlgorithms.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             cmbAlgorithms.FormattingEnabled = true;
             cmbAlgorithms.Items.AddRange(new object[] { "Quick Sort", "Insertion Sort" });
-            cmbAlgorithms.Location = new Point(487, 15);
+            cmbAlgorithms.Location = new Point(432, 30);
             cmbAlgorithms.Name = "cmbAlgorithms";
-            cmbAlgorithms.Size = new Size(151, 28);
+            cmbAlgorithms.Size = new Size(176, 31);
             cmbAlgorithms.TabIndex = 3;
             cmbAlgorithms.Text = "SortingAlgorithms";
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(337, 12);
+            btnReset.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnReset.Location = new Point(309, 12);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(134, 64);
+            btnReset.Size = new Size(97, 64);
             btnReset.TabIndex = 2;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -107,9 +111,10 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(182, 12);
+            btnStart.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnStart.Location = new Point(168, 12);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(139, 64);
+            btnStart.Size = new Size(121, 64);
             btnStart.TabIndex = 1;
             btnStart.Text = "Start Sort";
             btnStart.UseVisualStyleBackColor = true;
@@ -117,9 +122,10 @@
             // 
             // btnGenerate
             // 
+            btnGenerate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             btnGenerate.Location = new Point(21, 12);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(146, 64);
+            btnGenerate.Size = new Size(129, 64);
             btnGenerate.TabIndex = 0;
             btnGenerate.Text = "Generate New Array";
             btnGenerate.UseVisualStyleBackColor = true;
